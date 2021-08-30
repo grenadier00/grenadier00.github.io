@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>服务器 | 红与黑的博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="hexo" />
+    
+    <meta name="description" content="hexo-serverHexo 3.0 把服务器独立成了个别模块，您必须先安装 hexo-server 才能使用。 1$ npm install hexo-server --save 安装完成后，输入以下命令以启动服务器，您的网站会在 http:&#x2F;&#x2F;localhost:4000 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。 1$ hexo server 或者简写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器">
+<meta property="og:url" content="https://grenadier00.github.io/2021/08/30/Hexo/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:site_name" content="红与黑的博客">
+<meta property="og:description" content="hexo-serverHexo 3.0 把服务器独立成了个别模块，您必须先安装 hexo-server 才能使用。 1$ npm install hexo-server --save 安装完成后，输入以下命令以启动服务器，您的网站会在 http:&#x2F;&#x2F;localhost:4000 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。 1$ hexo server 或者简写">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://grenadier00.github.io/2021/08/30/Hexo/服务器/HEXO.png">
+<meta property="article:published_time" content="2021-08-30T11:55:40.000Z">
+<meta property="article:modified_time" content="2021-08-30T12:05:23.360Z">
+<meta property="article:author" content="Julien">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://grenadier00.github.io/2021/08/30/Hexo/服务器/HEXO.png">
+    
+
+    
+
+    
+        <link rel="icon" href="../../../../../css/images/favicon.png" />
+    
+
+    
+<link rel="stylesheet" href="../../../../../libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="../../../../../libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="../../../../../libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="../../../../../css/style.css">
+
+
+    
+<script src="../../../../../libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="../../../../../libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="../../../../../libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="../../../../../index.html" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="../../../../../index.html">主页</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="../../../../../categories/Github/">Github</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="../../../../../categories/Github/ssh/">ssh</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="../../../../../categories/Github/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="../../../../../categories/Hexo/">Hexo</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="../../../../../categories/Hexo/%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">使用介绍</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="../../../../../categories/Hexo/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98/">自定义主题</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="../../../../../categories/Hexo/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="../../../../../link.html">链接</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="../../../../../about.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../../../../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="../../../../../js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="../../../../../categories/Hexo/">Hexo</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="../../../../../categories/Hexo/%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">使用介绍</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Hexo/服务器" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        服务器
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                 
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="" class="article-date">
+       <time datetime="2021-08-30T11:55:40.000Z" itemprop="datePublished">2021-08-30</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="" class="article-date">
+     <time datetime="2021-08-30T12:05:23.360Z" itemprop="dateModified">2021-08-30</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="../../../../../tags/hexo/" rel="tag">hexo</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h3 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo-server"></a>hexo-server</h3><p>Hexo 3.0 把服务器独立成了个别模块，您必须先安装 hexo-server 才能使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+<p>安装完成后，输入以下命令以启动服务器，您的网站会在 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>或者简写为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>如果您想要更改端口，或是在执行时遇到了 EADDRINUSE 错误，可以在执行时使用 -p 选项指定其他端口，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -p 5000</span><br></pre></td></tr></table></figure>
+<p>那么你的网站便会在 <code>http://localhost:5000</code> 下启动。</p>
+<h3 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h3><p>在静态模式下，服务器只处理 public 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 hexo generate，此模式通常用于生产环境（production mode）下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -s</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义IP"><a href="#自定义IP" class="headerlink" title="自定义IP"></a>自定义IP</h3><p>服务器默认运行在 <code>0.0.0.0</code>，您可以覆盖默认的 IP 设置，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -i 192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>指定这个参数后，您就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的<code>127.0.0.1</code>外，通常还有一个<code>192.168.*.*</code>的局域网IP，如果像上面那样使用<code>-i</code>参数，就不能用<code>127.0.0.1</code>来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为-i参数的值，那么就无法通过公网来访问站点。</p>
+<blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/server">https://hexo.io/zh-cn/docs/server</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://grenadier00.github.io/2021/08/30/Hexo/%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-id="cksylioz6000uxsxgg3t2a07m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Julien"
+        },
+        "headline": "服务器",
+        "image": "../../../../../https:/grenadier00.github.io/2021/08/30/Hexo/%E6%9C%8D%E5%8A%A1%E5%99%A8/HEXO.png",
+        "keywords": "hexo",
+        "genre": "Hexo 使用介绍",
+        "datePublished": "2021-08-30",
+        "dateCreated": "2021-08-30",
+        "dateModified": "2021-08-30",
+        "url": "../../../../../https:/grenadier00.github.io/2021/08/30/Hexo/%E6%9C%8D%E5%8A%A1%E5%99%A8/",
+        "description": "hexo-serverHexo 3.0 把服务器独立成了个别模块，您必须先安装 hexo-server 才能使用。
+1$ npm install hexo-server --save
+安装完成后，输入以下命令以启动服务器，您的网站会在 http://localhost:4000 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。
+1$ hexo server
+或者简写",
+        "wordCount": 91
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="../../../../../https:/github.com/grenadier00" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="../%E5%86%99%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">写作</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2021/08/30/Hexo/服务器/HEXO.png)" alt="服务器" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="../../../../../categories/Hexo/">Hexo</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="../../../../../categories/Hexo/%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">使用介绍</a></p>
+                            <p class="item-title"><a href="" class="title">服务器</a></p>
+                            <p class="item-date"><time datetime="2021-08-30T11:55:40.000Z" itemprop="datePublished">2021-08-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="../%E5%86%99%E4%BD%9C/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2021/08/30/Hexo/写作/HEXO.png)" alt="写作" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="../../../../../categories/Hexo/">Hexo</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="../../../../../categories/Hexo/%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">使用介绍</a></p>
+                            <p class="item-title"><a href="../%E5%86%99%E4%BD%9C/" class="title">写作</a></p>
+                            <p class="item-date"><time datetime="2021-08-30T11:38:16.000Z" itemprop="datePublished">2021-08-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="../%E5%91%BD%E4%BB%A4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2021/08/30/Hexo/命令/HEXO.png)" alt="命令" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="../../../../../categories/Hexo/">Hexo</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="../../../../../categories/Hexo/%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">使用介绍</a></p>
+                            <p class="item-title"><a href="../%E5%91%BD%E4%BB%A4/" class="title">命令</a></p>
+                            <p class="item-date"><time datetime="2021-08-30T10:45:42.000Z" itemprop="datePublished">2021-08-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="../../../29/Hexo/Hexo%E8%A1%A8%E6%A0%BC%E8%AF%AD%E6%B3%95%E5%A4%B1%E6%95%88/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2021/08/29/Hexo/Hexo%E8%A1%A8%E6%A0%BC%E8%AF%AD%E6%B3%95%E5%A4%B1%E6%95%88/%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B.PNG)" alt="Hexo表格语法失效" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="../../../../../categories/Hexo/">Hexo</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="../../../../../categories/Hexo/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题</a></p>
+                            <p class="item-title"><a href="../../../29/Hexo/Hexo%E8%A1%A8%E6%A0%BC%E8%AF%AD%E6%B3%95%E5%A4%B1%E6%95%88/" class="title">Hexo表格语法失效</a></p>
+                            <p class="item-date"><time datetime="2021-08-29T12:48:35.000Z" itemprop="datePublished">2021-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="../../../29/Hexo/%E9%85%8D%E7%BD%AE/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2021/08/29/Hexo/配置/HEXO.png)" alt="配置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="../../../../../categories/Hexo/">Hexo</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="../../../../../categories/Hexo/%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">使用介绍</a></p>
+                            <p class="item-title"><a href="../../../29/Hexo/%E9%85%8D%E7%BD%AE/" class="title">配置</a></p>
+                            <p class="item-date"><time datetime="2021-08-29T12:05:09.000Z" itemprop="datePublished">2021-08-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/Github/">Github</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/Github/ssh/">ssh</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/Github/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/Hexo/">Hexo</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/Hexo/%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">使用介绍</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/Hexo/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98/">自定义主题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/Hexo/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/08/">八月 2021</a><span class="archive-list-count">14</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/DNS/" rel="tag">DNS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/favicon/" rel="tag">favicon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/github/" rel="tag">github</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/host/" rel="tag">host</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/ssh/" rel="tag">ssh</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98/" rel="tag">自定义主题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../../tags/%E8%A1%A8%E6%A0%BC/" rel="tag">表格</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+            
+                
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="../../../../../index.html" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Julien</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://grenadier00.github.io/2021/08/30/Hexo/%E6%9C%8D%E5%8A%A1%E5%99%A8/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="../../../../../libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="../../../../../libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="../../../../../libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="../../../../../js/main.js"></script>
+
+
+</body>
+</html>
